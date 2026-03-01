@@ -1,0 +1,32 @@
+[project]
+name = "tg-post-exctract"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "telethon>=1.42.0",
+    "toon-format",
+    "typer>=0.12.3",
+    "python-dotenv>=1.0.1",
+]
+
+[project.scripts]
+teletoon = "teletoon.cli:app"
+
+[tool.uv.sources]
+toon-format = { git = "https://github.com/toon-format/toon-python.git" }
+
+[tool.ruff.format]
+quote-style = "double"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.2",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
